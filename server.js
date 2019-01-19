@@ -75,13 +75,14 @@ app.post('/api/users/favorites/new', (request, response) => {
   }
 
   database('favorites').insert(favorite, 'id')
-    .then(favorite => {
-      response.status(201).json({ id: favorite[0] })
+    .then(favorites => {
+        response.status(201).json(favorites)
     })
     .catch(error => {
-      response.status(500).json({ error });
-    });
-});
+        response.status(500).json({error: error.message})
+    })
+})
+
 
 app.get('/api/users/:id/favorites', (request, response) => {
   database('favorites')
