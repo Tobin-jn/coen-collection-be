@@ -85,13 +85,13 @@ app.post('/api/users/favorites/new', (request, response) => {
 
 app.get('/api/users/:id/favorites', (request, response) => {
   database('favorites')
-    .where('id', request.params.id).select()
+    .where('user_id', request.params.id).select()
     .then(favorite => {
       if(favorite.length) {
         response.status(200).json(favorite)
       } else {
         response.status(404).json({
-          error: `Could not find paper with id ${request.params.id}`
+          error: `Could not find any favorites for user id ${request.params.id}`
         });
       }
     })
