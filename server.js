@@ -55,8 +55,8 @@ app.post('/api/users', (request, response) => {
 
   database('users').where('email', user.email)
       .select()
-      .then(userIds => {
-          response.status(201).json(userIds[0])
+      .then(user => {
+          response.status(201).json(user)
       })
       .catch(error => {
           response.status(500).json({error: error.message})
