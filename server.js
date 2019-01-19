@@ -44,24 +44,24 @@ app.post('/api/users/new', (request, response) => {
     });
 });
 
-// app.post('/api/users', (request, response) => {
-//   const user = request.body
+app.post('/api/users', (request, response) => {
+  const user = request.body
 
-//   for(let requiredParam of ['email', 'password']) {
-//       if(!user[requiredParam]) {
-//           response.status(422).json({error: error.message})
-//       }
-//   }
+  for(let requiredParam of ['email', 'password']) {
+      if(!user[requiredParam]) {
+          response.status(422).json({error: error.message})
+      }
+  }
 
-//   database('users').where('email', user.email)
-//       .select()
-//       .then(userIds => {
-//           response.status(201).json(userIds[0])
-//       })
-//       .catch(error => {
-//           response.status(500).json({error: error.message})
-//       })
-// })
+  database('users').where('email', user.email)
+      .select()
+      .then(userIds => {
+          response.status(201).json(userIds[0])
+      })
+      .catch(error => {
+          response.status(500).json({error: error.message})
+      })
+})
 
 app.post('/api/users/favorites/new', (request, response) => {
   const favorite = request.body;
