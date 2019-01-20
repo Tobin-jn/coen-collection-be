@@ -2,7 +2,7 @@
 
 ### About
 
-This is the user database to store users and favorited selectiond for the [Coen Collection](https://coen-collection.herokuapp.com/) app.
+This is the user database to store users and favorited selections for the [Coen Collection](https://coen-collection.herokuapp.com/) app.
 
 ### See it Live
 
@@ -18,10 +18,9 @@ This is the user database to store users and favorited selectiond for the [Coen 
 ## API Endpoints
 
  * ##### Sign In `/api/users`
-
   To sign in you will need to pass in *email* and *password* to the *body*.
   Emails should be sent in all lowercase. - ex: `{..., body: {email: 'tim@aol.com', password: 'password'} }`
-  The database starts off with a single user inside. -> { email: tman2272@aol.com password: password }. Keep in mind the response will send the entire user back.
+  The database starts off with a single user inside. -> { email: tman2272@aol.com password: password }. Keep in mind the    response will send the entire user back.
 
 * ##### Create Account - `/api/users/new`
   Creating an account must have all input fields filled in (name, email, password)
