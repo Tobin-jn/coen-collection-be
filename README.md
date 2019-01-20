@@ -17,9 +17,8 @@ This is the user database to store users and favorited selections for the [Coen 
 
 ## API Endpoints
 
- * ##### Sign In `/api/users`
-  To sign in you will need to pass in *email* and *password* to the *body*.
-  The database starts off with a single user inside. -> { email: tman2272@aol.com password: password }. 
+ * ##### Sign In - `/api/users`
+  To sign in you will need to pass in email and password to the body.
   
 * ##### Create Account - `/api/users/new`
   Creating an account must have all input fields filled in (name, email, password)
